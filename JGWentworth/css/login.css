@@ -1,0 +1,53 @@
+#loginContainer{
+    width:60%;
+    margin:0 auto;
+}
+
+.loginHeaderText{
+    
+    color:#FFFFFF;
+    font-size:18px;
+    text-align: center;
+    padding:5px 0;
+}
+
+#loginBoxHeader{
+    height:30px;
+    background-image: -o-linear-gradient(#CC021D 0%, #800011 63%);
+    background-image: -moz-linear-gradient(#CC021D 0%, #800011 63%);
+    background-image: -webkit-linear-gradient(#CC021D 0%, #800011 63%);
+    background-image: -ms-linear-gradient(#CC021D 0%, #800011 63%);
+    background-image: linear-gradient(#CC021D 0%, #800011 63%);
+}
+
+#loginBoxBody
+{
+    background-color:#FFFFFF;
+    border:1px solid darkgrey;
+    padding:10px;
+}
+
+#loginButton{
+    background-image: -o-linear-gradient(#CC021D 0%, #800011 63%);
+    background-image: -moz-linear-gradient(#CC021D 0%, #800011 63%);
+    background-image: -webkit-linear-gradient(#CC021D 0%, #800011 63%);
+    background-image: -ms-linear-gradient(#CC021D 0%, #800011 63%);
+    background-image: linear-gradient(#CC021D 0%, #800011 63%);;
+    color:#FFFFFF;
+    font-size:15px;
+}
+
+#loginButton:hover{
+    background:#BA021B;
+}
+
+#error{
+    display:none;
+    color:red;
+    margin-bottom:5px;
+}
+
+.Center{
+    width:auto;
+    max-width:800px;
+}

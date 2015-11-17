@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='css/login.css' type='text/css'/>
+    </head>
+    <body>
+        <div id="loginBodyZone">
+            <div class="Center">
+                <div id="loginContainer">
+                    <div id="loginBoxHeader">
+                        <div class="loginHeaderText">
+                            Administrator Login
+                        </div>
+                    </div>
+                    <div id="loginBoxBody">
+                        <form id="loginForm" method="post" action="login.php">
+                            <div id="error">Incorrect Username or Password</div>    
+                            <div class="Loginleft">
+                                <label class="usrLabel">Username</label><br>
+                                <input class="usrField" id="usr" name="usr" type="text"/><br><br>
+                                <label class="pswdLabel">Password</label></br>
+                                <input class="pswdField" id="pswd" name="pswd" type="password"/><br><br>
+                            </div>
+
+                             <input class="loginButton" type="submit" id="loginButton" name="loginButton" value="Login" />
+                           
+                         </form>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <script>
+               function getUrlVars() 
+            {
+                var vars = {};
+                var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, 
+                function(m,key,value) 
+                {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+            
+            function show(id)
+            {
+              //alert("cheked the button - worked");
+              document.getElementById(id).style.display= 'block' ;
+            }
+            
+            if(getUrlVars()['attempt'] > 0)
+            {
+                show('error');
+            }
+    </script>
+    </body>
+</html>
