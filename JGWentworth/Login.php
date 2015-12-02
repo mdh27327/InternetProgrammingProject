@@ -2,28 +2,36 @@
 ob_start();
 session_start();
 include 'Database.php';
+include 'PasswordHash.php';
 $db = new Database();
-$userName = strtolower($_POST['usr']);
+$userName = $_POST['usr'];
 $pswd = $_POST['pswd'];
 $attempt=1;
-$loginDest='employee_Dashboard.php';
+$loginDest='http://www,google.com';
 try{
                 
-                $sql='SELECT * FROM USERS WHERE USERS.USERNAME =:userName';
+                $sql='SELECT * FROM USERS WHERE USERNAME =:userName';
                 $result=$db->queryDb($sql,$userName,':userName');
-                
                 
                
                 if($result->rowCount() == 0)
                 {
-                    
+
                     header('Location:login.html?attempt='.$attempt);
                     
                     
                 }
+                
                 While($row = $result->fetch())
                 {
-                    if($row['Password']==$pswd)
+                   
+                    $answer = validate_password($pswd,$row['PasswordHash']);
+                    
+                    echo($answer);
+                     
+                    
+                    
+                    if(validate_password($pswd,$row['PasswordHash']))
                     {
                         session_regenerate_id();
                         $_SESSION['sess_user_id'] = $row['ID'];

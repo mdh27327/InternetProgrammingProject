@@ -65,12 +65,14 @@ class Database {
     
     public function queryDb($sql,$bind,$binder)
     {
+       
        try{
            $db = new PDO($this->connString,$this->user,$this->pass);
            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
            $result = $db->prepare($sql);
            $result->bindValue($binder,$bind);
            $result->execute();
+           
            
            
       
