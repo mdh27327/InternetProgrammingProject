@@ -1,0 +1,68 @@
+body{
+ background-color:#f0f0f0!important;   
+}
+
+
+#navZone{
+    width:100%;
+    height:50px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#33aa8a+0,0f6746+66,0f6746+100 */
+background: #33aa8a; /* Old browsers */
+background: -moz-linear-gradient(top,  #33aa8a 0%, #0f6746 66%, #0f6746 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #33aa8a 0%,#0f6746 66%,#0f6746 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #33aa8a 0%,#0f6746 66%,#0f6746 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33aa8a', endColorstr='#0f6746',GradientType=0 ); /* IE6-9 */
+
+}
+
+.navLink{
+    width:10%;
+    float:left;
+    height:100%;
+    border-left: 1px solid #0f6746;
+    border-right: 1px solid #0f6746;
+    text-decoration: none;
+}
+
+.navButton{
+    width:12%;
+    float:left;
+    border-left: 1px solid #0f6746;
+    border-right: 1px solid #0f6746;
+    text-decoration: none;
+    text-align:center;
+    padding: 8px 0;
+    color:#FFFFFF;
+    font-weight:500;
+    height:34px;
+}
+
+.navDiv{
+    text-align:center;
+    padding: 8px 0;
+    height:100%;
+    color:#FFFFFF;
+    font-weight:500;
+    
+}
+
+#nav{
+    height:100%;
+    width:80%;
+    margin:0 auto;
+}
+
+.navLink:hover,.navButton:hover{
+    background-color:#0f6746;
+}
+
+#bannerZone{
+    height:125px;
+    background-color:#f0f0f0;
+    border:4px solid #0F6746;
+}
+
+.heading{
+    font-size:56px;
+    color:#0f6746;
+}

@@ -7,7 +7,7 @@ $db = new Database();
 $userName = $_POST['usr'];
 $pswd = $_POST['pswd'];
 $attempt=1;
-$loginDest='http://www,google.com';
+$loginDest='Dashboard.php';
 try{
                 
                 $sql='SELECT * FROM USERS WHERE USERNAME =:userName';
