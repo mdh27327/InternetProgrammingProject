@@ -1,4 +1,6 @@
 <?php
+ob_start();
+session_start();
 if($_FILES['file']['size']>0){
 
     
@@ -6,11 +8,13 @@ if($_FILES['file']['size']>0){
     
      if (move_uploaded_file($_FILES['file']['tmp_name'],"images/".$_FILES['file']["name"])){ 
      
+         $_SESSION["imageurl"]="images/".$_FILES['file']["name"];
          ?>
          <script type = "text/javascript">
          parent.document.getElementById("message").innerHTML="";
          parent.document.getElementById("file").value="";
          window.parent.updatepicture("<?php echo 'images/'.$_FILES['file']["name"];?>");
+         
          </script>
       <?php
         //file uploade

@@ -9,7 +9,7 @@ $hash = create_hash($_POST['password']);
 
 //insert into employee table
 $sql = 'INSERT INTO `sql595597`.`Employee`(`DepartmentID`,`FirstName`,`LastName`,`Title`,`Phone`,`PhotoUrl`)'
-.' VALUES('.$_POST['department'].',"'.$_POST["firstname"].'","'.$_POST["lastname"].'","'.$_POST["title"].'","'.$_POST["phone"].'","dud");';
+.' VALUES('.$_POST['department'].',"'.$_POST["firstname"].'","'.$_POST["lastname"].'","'.$_POST["title"].'","'.$_POST["phone"].'","'.$_POST["image"].'");';
 
 $db = new Database();
 

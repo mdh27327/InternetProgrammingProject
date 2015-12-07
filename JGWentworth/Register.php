@@ -1,4 +1,6 @@
 <?php
+ob_start();
+session_start();
 include 'Database.php';
 $db = new Database();
 /* 
@@ -29,10 +31,34 @@ and open the template in the editor.
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 <script src="scripts/jquery.validate.js"></script>
 <script src="scripts/additional-methods.js"></script>
+<script type="text/javascript">
+        function updatepicture(pic)
+    {
+        document.getElementById("image").setAttribute("src",pic);
+    }
+    
+</script>
     </head>
     <body>
         <h2>Register a New Employee</h2>
         <div class="container">
+            <div class="row">
+                            <div class="col-md-2">
+                                <label for="photo">User Photo</label>
+                            </div>
+                            <div class="col-md-6">
+                                <form id="form" method="post" action="uploadPic.php" enctype="multipart/form-data" target="iframe">
+            <input type="file" id="file" name="file"/>
+            <input type="submit" name="submit" id="submit" value="Upload File"/>
+       
+        <p id="message"> Upload your profile image here.</p>
+       
+        <img style="min-height:120px; min-width:200px;max-height:120px;" id="image"/><br/></br>
+        
+        <iframe style="display: none;" name="iframe"></iframe>
+        </form>
+                            </div>
+                        </div>
             <form id="registerForm">
                 <fieldset>
                     <legend>Employee Info</legend>
@@ -97,6 +123,7 @@ and open the template in the editor.
                             </select>
                         </div>
                     </div>
+                        
                 </div>
                 </fieldset>
                 <fieldset>
@@ -144,7 +171,7 @@ and open the template in the editor.
                     </div>
                 </div>
                     </fieldset>
-                <input type="button" id="submit" value="Submit" class="btn btn-primary"/>
+                <input type="button" id="submitbutton" value="Submit" class="btn btn-primary"/>
             </form>
         </div>
     </body>
@@ -152,11 +179,12 @@ and open the template in the editor.
 
 <script>
     $("#registerForm").validate();
+    
     $("document").ready(function(){
-        
-        
-        $("#submit").click(function(){
        
+        
+        $("#submitbutton").click(function(){
+            
            if($("#registerForm").valid())
            {
                $.ajax({
@@ -173,7 +201,9 @@ and open the template in the editor.
                     phone:$("#phone").val(),
                     username:$("#username").val(),
                     password:$("#password").val(),
-                    role:$("#role").val()
+                    role:$("#role").val(),
+                    image:"<?php echo($_SESSION["imageurl"]);?>"
+                    
                  
                 
                 }),
